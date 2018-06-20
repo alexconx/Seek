@@ -35,6 +35,5 @@ test1 = soup.find_all(class_='user-ad-row user-ad-row--no-image link link--base-
 test2 = soup.find_all(class_='user-ad-row user-ad-row--featured-or-premium user-ad-row--no-image link link--base-color-inherit link--hover-color-none link--no-underline')
 test3 = soup.find_all(class_='user-ad-row user-ad-row--premium user-ad-row--featured-or-premium user-ad-row--no-image link link--base-color-inherit link--hover-color-none link--no-underline')
 
-print(test1)
-print(test2)
-print(test3)
+print(test1[0])
+

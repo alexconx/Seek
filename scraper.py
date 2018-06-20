@@ -33,7 +33,7 @@ soup = BeautifulSoup(page.content, 'html.parser')
 
 hello = soup.find('p')
 
-test = soup.find_all(class_='user-ad-row user-ad-row--premium user-ad-row--featured-or-premium user-ad-row--no-image link link--base-color-inherit link--hover-color-none link--no-underline')
+test = soup.find_all(class_='user-ad-row user-ad-row--no-image link link--base-color-inherit link--hover-color-none link--no-underline')
 
 print(hello.prettify())
 print(test)

@@ -43,5 +43,5 @@ for a in soup.find_all('a', href=True, class_='user-ad-row user-ad-row--premium 
     list_url.append("https://www.gumtree.com.au"+a['href'])
     
     
-print (list_url[1])
+print (list_url)
     

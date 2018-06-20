@@ -31,19 +31,12 @@ page = requests.get("https://www.gumtree.com.au/s-construction/c18346?ad=offerin
 
 soup = BeautifulSoup(page.content, 'html.parser')
 
-#test1 = soup.find_all('href', class_='user-ad-row user-ad-row--no-image link link--base-color-inherit link--hover-color-none link--no-underline')
-#test2 = soup.find_all(class_='user-ad-row user-ad-row--featured-or-premium user-ad-row--no-image link link--base-color-inherit link--hover-color-none link--no-underline')
-#test3 = soup.find_all(class_='user-ad-row user-ad-row--premium user-ad-row--featured-or-premium user-ad-row--no-image link link--base-color-inherit link--hover-color-none link--no-underline')
-
 for a in soup.find_all('a', href=True, class_='user-ad-row user-ad-row--no-image link link--base-color-inherit link--hover-color-none link--no-underline'):
     print "https://www.gumtree.com.au", a['href']
     
-    
 for a in soup.find_all('a', href=True, class_='user-ad-row user-ad-row--featured-or-premium user-ad-row--no-image link link--base-color-inherit link--hover-color-none link--no-underline'):
-    print "https://www.gumtree.com.au/", a['href']
+    print "https://www.gumtree.com.au", a['href']
     
 for a in soup.find_all('a', href=True, class_='user-ad-row user-ad-row--premium user-ad-row--featured-or-premium user-ad-row--no-image link link--base-color-inherit link--hover-color-none link--no-underline'):
     print "https://www.gumtree.com.au", a['href']
     
-#print(test1[0])
-

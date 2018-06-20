@@ -26,6 +26,7 @@
 
 import requests
 from bs4 import BeautifulSoup
+from selenium import webdriver
 
 list_url = []
 
@@ -41,15 +42,19 @@ for a in soup.find_all('a', href=True, class_='user-ad-row user-ad-row--featured
 for a in soup.find_all('a', href=True, class_='user-ad-row user-ad-row--premium user-ad-row--featured-or-premium user-ad-row--no-image link link--base-color-inherit link--hover-color-none link--no-underline'):
     list_url.append("https://www.gumtree.com.au"+a['href'])
 
-for i in range (2,15) :
-    page = requests.get("https://www.gumtree.com.au/s-construction/page-"+str(i)+"/c18346?ad=offering&ad=offering")
-    soup = BeautifulSoup(page.content, 'html.parser')
+#for i in range (2,15) :
+ #   page = requests.get("https://www.gumtree.com.au/s-construction/page-"+str(i)+"/c18346?ad=offering&ad=offering")
+  #  soup = BeautifulSoup(page.content, 'html.parser')
 
     #3 classes of link
-    for a in soup.find_all('a', href=True, class_='user-ad-row user-ad-row--no-image link link--base-color-inherit link--hover-color-none link--no-underline'):
-        list_url.append("https://www.gumtree.com.au"+a['href'])
-    for a in soup.find_all('a', href=True, class_='user-ad-row user-ad-row--featured-or-premium user-ad-row--no-image link link--base-color-inherit link--hover-color-none link--no-underline'):
-        list_url.append("https://www.gumtree.com.au"+a['href'])
+   # for a in soup.find_all('a', href=True, class_='user-ad-row user-ad-row--no-image link link--base-color-inherit link--hover-color-none link--no-underline'):
+    #    list_url.append("https://www.gumtree.com.au"+a['href'])
+   # for a in soup.find_all('a', href=True, class_='user-ad-row user-ad-row--featured-or-premium user-ad-row--no-image link link--base-color-inherit link--hover-color-none link--no-underline'):
+    #    list_url.append("https://www.gumtree.com.au"+a['href'])
     
 print (list_url)
-    
+
+page = requests.get(list_url[0])
+soup = BeautifulSoup(page.content, 'html.parser')
+elem = driver.find_element_by_class_name('c-text-link reply-form__reveal-phone-link').click()
+soup.find_all(class = 'ad-phone reply-form__phone-number')

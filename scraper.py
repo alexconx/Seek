@@ -31,4 +31,4 @@ page = requests.get("https://www.gumtree.com.au/s-construction/c18346?ad=offerin
 
 soup = BeautifulSoup(page.content, 'html.parser')
 
-print(soup.prettify())
+soup.find_all('a', class_='user-ad-row user-ad-row--premium user-ad-row--featured-or-premium user-ad-row--no-image link link--base-color-inherit link--hover-color-none link--no-underline')

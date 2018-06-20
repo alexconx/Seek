@@ -34,7 +34,7 @@ soup = BeautifulSoup(page.content, 'html.parser')
 list_url = []
 
 for a in soup.find_all('a', href=True, class_='user-ad-row user-ad-row--no-image link link--base-color-inherit link--hover-color-none link--no-underline'):
-    list_url.append("https://www.gumtree.com.au", a['href'])
+    list_url.append("https://www.gumtree.com.au"+a['href'])
     
 for a in soup.find_all('a', href=True, class_='user-ad-row user-ad-row--featured-or-premium user-ad-row--no-image link link--base-color-inherit link--hover-color-none link--no-underline'):
     print "https://www.gumtree.com.au", a['href']

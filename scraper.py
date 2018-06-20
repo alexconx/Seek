@@ -35,7 +35,7 @@ soup = BeautifulSoup(page.content, 'html.parser')
 #test2 = soup.find_all(class_='user-ad-row user-ad-row--featured-or-premium user-ad-row--no-image link link--base-color-inherit link--hover-color-none link--no-underline')
 #test3 = soup.find_all(class_='user-ad-row user-ad-row--premium user-ad-row--featured-or-premium user-ad-row--no-image link link--base-color-inherit link--hover-color-none link--no-underline')
 
-for a in soup.find_all('a', href=True):
+for a in soup.find_all('a', href=True, class_='user-ad-row user-ad-row--no-image link link--base-color-inherit link--hover-color-none link--no-underline'):
     print "Found the URL:", a['href']
     
 #print(test1[0])

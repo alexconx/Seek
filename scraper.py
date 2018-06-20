@@ -27,7 +27,7 @@
 import requests
 from bs4 import BeautifulSoup
 
-page = requests.get("https://www.gumtree.com.au/s-construction/c18346?ad=offering")
+page = requests.get("https://www.gumtree.com.au/s-construction/c18346?ad=offering&ad=offering")
 
 soup = BeautifulSoup(page.content, 'html.parser')
 

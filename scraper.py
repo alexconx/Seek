@@ -22,3 +22,10 @@
 # All that matters is that your final data is written to an SQLite database
 # called "data.sqlite" in the current working directory which has at least a table
 # called "data".
+
+
+import requests
+from bs4 import BeautifulSoup
+soup = BeautifulSoup(page.content, 'html.parser')
+
+print(soup.prettify())

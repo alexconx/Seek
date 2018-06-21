@@ -58,3 +58,5 @@ page = requests.get(list_url[0])
 soup = BeautifulSoup(page.content, 'html.parser')
 #elem = webdriver.find_element_by_class_name('c-text-link reply-form__reveal-phone-link').click()
 soup.find_all(class_= 'c-text-link reply-form__reveal-phone-link')
+
+print(soup.prettify())

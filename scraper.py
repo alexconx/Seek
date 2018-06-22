@@ -59,4 +59,4 @@ soup = BeautifulSoup(page.content, 'html.parser')
 #elem = webdriver.find_element_by_class_name('c-text-link reply-form__reveal-phone-link').click()
 soup.find_all(class_= 'page-container container')
 
-print(soup.prettify())
+print soup.prettify().encode('utf-8')

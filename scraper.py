@@ -23,6 +23,7 @@
 # called "data.sqlite" in the current working directory which has at least a table
 # called "data".
 
+import re
 import json
 import requests
 from bs4 import BeautifulSoup
@@ -61,7 +62,8 @@ soup = BeautifulSoup(page.text, 'html.parser')
 
 text = soup.get_text()
 
-print text
+token = re.search(''phoneToken': '(.*)'', text)
+print(token.group(0))
 
 
 

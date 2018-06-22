@@ -63,6 +63,8 @@ soup = BeautifulSoup(page.text, 'html.parser')
 text = soup.get_text()
 
 token = re.search("'phoneToken': '(.*)'", text)
+token.replace("'phoneToken': '","")
+token.replace("'","")
 print(token.group(0))
 
 

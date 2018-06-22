@@ -66,7 +66,7 @@ soup = BeautifulSoup(page.text, 'html.parser')
 
 all_scripts = soup.find_all('script')
 
-data = json.loads(all_scripts[200].get_text())
+data = json.loads(all_scripts.get_text())
 
 print('key:', data.keys())
 #print('key:', data['TAB'].keys())

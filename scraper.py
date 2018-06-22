@@ -64,9 +64,9 @@ text = soup.get_text()
 
 regex = re.search("'phoneToken': '(.*)'", text)
 token = str(regex.group(0))
-token.replace("'phoneToken': '", "")
-token.replace("'", "")
-token.replace("|", "%7C")
+token = token.replace("'phoneToken': '", "")
+token = token.replace("'", "")
+token = token.replace("|", "%7C")
 
 
 print(token)

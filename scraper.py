@@ -42,11 +42,13 @@ for a in soup.find_all('a', href=True, class_='user-ad-row user-ad-row--featured
 for a in soup.find_all('a', href=True, class_='user-ad-row user-ad-row--premium user-ad-row--featured-or-premium user-ad-row--no-image link link--base-color-inherit link--hover-color-none link--no-underline'):
     list_url.append("https://www.gumtree.com.au"+a['href'])
 
+    
+# BOUCLE POUR CHERCHER TOUS LES LIENS DES 15 PREMIERES PAGES
 #for i in range (2,15) :
  #   page = requests.get("https://www.gumtree.com.au/s-construction/page-"+str(i)+"/c18346?ad=offering&ad=offering")
   #  soup = BeautifulSoup(page.content, 'html.parser')
 
-    #3 classes of link
+    #There are 3 classes of links
    # for a in soup.find_all('a', href=True, class_='user-ad-row user-ad-row--no-image link link--base-color-inherit link--hover-color-none link--no-underline'):
     #    list_url.append("https://www.gumtree.com.au"+a['href'])
    # for a in soup.find_all('a', href=True, class_='user-ad-row user-ad-row--featured-or-premium user-ad-row--no-image link link--base-color-inherit link--hover-color-none link--no-underline'):
@@ -56,10 +58,19 @@ print (list_url)
 
 page = requests.get(list_url[0])
 soup = BeautifulSoup(page.text, 'html.parser')
-#elem = webdriver.find_element_by_class_name('c-text-link reply-form__reveal-phone-link').click()
-soup.find_all("script", class_= 'page-container container')
 
-print soup.prettify().encode('utf-8')
+text = soup.get_text()
+
+print text
+
+
+
+
+
+#elem = webdriver.find_element_by_class_name('c-text-link reply-form__reveal-phone-link').click()
+#soup.find_all("script", class_= 'page-container container')
+
+#print soup.prettify().encode('utf-8')
 
 
 #data = json.loads(all_scripts[1].get_text())
@@ -68,7 +79,7 @@ print soup.prettify().encode('utf-8')
 #print('key:', data['TAB'].keys())
 
 #Une fois la request obtenue on lance ce code
-page = requests.get('https://www.gumtree.com.au/j-vac-phone-get.json?token=1187259423%7C1529633569893%7C4152f883555b1ed7f7f0721463ffbf47%7C4368ebcdc8b1c736bb277b1b34b700b1%7C156dc442438603c3afd031a0881a9197%7C819471bd0234a4f9c0f71111a08d6858&origin=jsp')
-soup = BeautifulSoup(page.text, 'html.parser')
+#page = requests.get('https://www.gumtree.com.au/j-vac-phone-get.json?token=1187259423%7C1529633569893%7C4152f883555b1ed7f7f0721463ffbf47%7C4368ebcdc8b1c736bb277b1b34b700b1%7C156dc442438603c3afd031a0881a9197%7C819471bd0234a4f9c0f71111a08d6858&origin=jsp')
+#soup = BeautifulSoup(page.text, 'html.parser')
 
-print soup.prettify()
+#print soup.prettify()

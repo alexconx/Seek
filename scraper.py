@@ -23,7 +23,7 @@
 # called "data.sqlite" in the current working directory which has at least a table
 # called "data".
 
-
+import json
 import requests
 from bs4 import BeautifulSoup
 from selenium import webdriver

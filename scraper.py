@@ -71,4 +71,4 @@ print (list_url)
 page = requests.get('https://www.gumtree.com.au/j-vac-phone-get.json?token=1187259423%7C1529633569893%7C4152f883555b1ed7f7f0721463ffbf47%7C4368ebcdc8b1c736bb277b1b34b700b1%7C156dc442438603c3afd031a0881a9197%7C819471bd0234a4f9c0f71111a08d6858&origin=jsp')
 soup = BeautifulSoup(page.content, 'html.parser')
 
-print soup["phone"].prettify()
+print soup.prettify()

@@ -68,6 +68,7 @@ token = token.replace("'phoneToken': '", "")
 token = token.replace("'", "")
 token = token.replace("|", "%7C")
 
+print(list_url[0])
 print(token)
 print("https://www.gumtree.com.au/j-vac-phone-get.json?token="+token+"&origin=jsp")
 

@@ -94,6 +94,8 @@ print(list_url[0])
 print(token)
 print("https://www.gumtree.com.au/j-vac-phone-get.json?token="+token+"&origin=jsp")
 
+page = requests.get(list_url[0])
+soup = BeautifulSoup(page.text, 'html.parser')
 request = requests.get("https://www.gumtree.com.au/j-vac-phone-get.json?token="+token+"&origin=jsp")
 soup2 = BeautifulSoup(request.text, 'html.parser')
 

@@ -55,8 +55,18 @@ for a in soup.find_all('a', href=True, class_='user-ad-row user-ad-row--premium 
 print (list_url)
 
 page = requests.get(list_url[0])
-soup = BeautifulSoup(page.content, 'html.parser')
+soup = BeautifulSoup(page.text, 'html.parser')
 #elem = webdriver.find_element_by_class_name('c-text-link reply-form__reveal-phone-link').click()
-soup.find_all("script", class_= 'page-container container')
+#soup.find_all("script", class_= 'page-container container')
 
-print soup.prettify().encode('utf-8')
+#print soup.prettify().encode('utf-8')
+
+
+
+
+all_scripts = soup.find_all('script')
+
+data = json.loads(all_scripts[-29].get_text())
+
+print('key:', data.keys())
+#print('key:', data['TAB'].keys())

@@ -72,31 +72,7 @@ print(list_url[0])
 print(token)
 print("https://www.gumtree.com.au/j-vac-phone-get.json?token="+token+"&origin=jsp")
 
-request = requests.get("https://www.gumtree.com.au/j-vac-phone-get.json?token="+token+"&origin=jsp")
-soup2 = BeautifulSoup(request.text, 'html.parser')
-
-print soup2.prettify()
-
-####
-
-page = requests.get(list_url[0])
-soup = BeautifulSoup(page.text, 'html.parser')
-
-text = soup.get_text()
-
-regex = re.search("'phoneToken': '(.*)'", text)
-token = str(regex.group(0))
-token = token.replace("'phoneToken': '", "")
-token = token.replace("'", "")
-token = token.replace("|", "%7C")
-
-print(list_url[0])
-print(token)
-print("https://www.gumtree.com.au/j-vac-phone-get.json?token="+token+"&origin=jsp")
-
-page = requests.get(list_url[0])
-soup = BeautifulSoup(page.text, 'html.parser')
-request = requests.get("https://www.gumtree.com.au/j-vac-phone-get.json?token="+token+"&origin=jsp")
+request = requests.get("https://www.gumtree.com.au/j-vac-phone-get.json?token=1187259423%7C1529633569893%7C4152f883555b1ed7f7f0721463ffbf47%7C4368ebcdc8b1c736bb277b1b34b700b1%7C156dc442438603c3afd031a0881a9197%7C819471bd0234a4f9c0f71111a08d6858&origin=jsp")
 soup2 = BeautifulSoup(request.text, 'html.parser')
 
 print soup2.prettify()

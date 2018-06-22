@@ -69,6 +69,7 @@ token = token.replace("'", "")
 token = token.replace("|", "%7C")
 
 print(token)
+print("https://www.gumtree.com.au/j-vac-phone-get.json?token="+token+"&origin=jsp")
 
 request = requests.get("https://www.gumtree.com.au/j-vac-phone-get.json?token="+token+"&origin=jsp")
 soup2 = BeautifulSoup(request.text, 'html.parser')

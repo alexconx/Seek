@@ -75,6 +75,13 @@ print("https://www.gumtree.com.au/j-vac-phone-get.json?token="+token+"&origin=js
 
 h = {'Alex': 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.3319.102 Safari/537.36'}
 request = requests.get("https://www.gumtree.com.au/j-vac-phone-get.json?token="+token)
+
+time.sleep(3)
+soup2 = BeautifulSoup(request.text, 'html.parser')
+
+print soup2.prettify()
+
+
 request = requests.get("https://www.gumtree.com.au/j-vac-phone-get.json?token=1187896783%7C1529892336239%7C42ab70794478158663e1c2cf5de21e9b%7C78a830d699861d6b8c952f0bc49a7435%7C3f8c7a2063e491af6679f6f954b0351d%7C2102f961bae369175218ea48c318bdd8", headers = h)
 
 time.sleep(3)

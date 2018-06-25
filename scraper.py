@@ -58,7 +58,7 @@ for a in soup.find_all('a', href=True, class_='user-ad-row user-ad-row--premium 
     
 print (list_url)
 
-page = requests.get(list_url[0])
+page = requests.get(list_url[2])
 soup = BeautifulSoup(page.text, 'html.parser')
 
 text = soup.get_text()
@@ -69,7 +69,7 @@ token = token.replace("'phoneToken': '", "")
 token = token.replace("'", "")
 token = token.replace("|", "%7C")
 
-print(list_url[0])
+print(list_url[2])
 print(token)
 print("https://www.gumtree.com.au/j-vac-phone-get.json?token="+token+"&origin=jsp")
 

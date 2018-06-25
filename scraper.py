@@ -73,8 +73,8 @@ print(list_url[0])
 print(token)
 print("https://www.gumtree.com.au/j-vac-phone-get.json?token="+token+"&origin=jsp")
 
-request = requests.get("https://www.gumtree.com.au/j-vac-phone-get.json?token="+token)
-#request = requests.get("https://www.gumtree.com.au/j-vac-phone-get.json?token=1187259423%7C1529633569893%7C4152f883555b1ed7f7f0721463ffbf47%7C4368ebcdc8b1c736bb277b1b34b700b1%7C156dc442438603c3afd031a0881a9197%7C819471bd0234a4f9c0f71111a08d6858&origin=jsp")
+#request = requests.get("https://www.gumtree.com.au/j-vac-phone-get.json?token="+token)
+request = requests.get("https://www.gumtree.com.au/j-vac-phone-get.json?token=1187896783%7C1529892336239%7C42ab70794478158663e1c2cf5de21e9b%7C78a830d699861d6b8c952f0bc49a7435%7C3f8c7a2063e491af6679f6f954b0351d%7C2102f961bae369175218ea48c318bdd8")
 
 time.sleep(3)
 soup2 = BeautifulSoup(request.text, 'html.parser')

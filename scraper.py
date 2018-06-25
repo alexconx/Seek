@@ -78,7 +78,7 @@ request = requests.get("https://www.gumtree.com.au/j-vac-phone-get.json?token=11
 
 time.sleep(3)
 h = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'}
-soup2 = BeautifulSoup(request.text, 'html.parser', headers = h)
+soup2 = BeautifulSoup(request.text, headers = h)
 
 print soup2.prettify()
 

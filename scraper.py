@@ -1,5 +1,6 @@
 import scraperwiki
 import lxml.html
+from lxml import etree
 #
 # # Read in a page
 # html = scraperwiki.scrape("http://foo.com")

@@ -45,7 +45,8 @@ for a in soup.find_all('a', href=True, class_='user-ad-row user-ad-row--premium 
 #print (list_url)
 
 html = scraperwiki.scrape("https://www.gumtree.com.au/j-vac-phone-get.json?token=1174339848%7C1529906358437%7C6932f7828289d4d34f961a7f5877d387%7Cb4c92b5fdbcf5441db75c70214c13b82%7Cbcf0cc943c497cedbc16e504824ce5fd%7Cdc0eadaa4b7a8c2ab665073df885c2dc")
-root = lxml.html.tostring(html)
+root = lxml.html.fromstring(html)
 
-print(root)
+print(etree.tostring(root, pretty_print=True))
+
 

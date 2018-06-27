@@ -33,5 +33,5 @@ for i in range (2,5) :
     
 print (list_url)
 
-
+scraperwiki.sqlite.save(data={"link": list_url[0]})
 

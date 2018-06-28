@@ -24,15 +24,15 @@ for a in soup.find_all('a', href=True, class_='user-ad-row user-ad-row--premium 
     list_url.append("https://www.gumtree.com.au"+a['href'])
 
 #BOUCLE POUR CHERCHER TOUS LES LIENS DES 15 PREMIERES PAGES
-for i in range (2,3) :
-    page = requests.get("https://www.gumtree.com.au/s-construction/page-"+str(i)+"/advertisedby-private/c18346?ad=offering")
-    soup = BeautifulSoup(page.content, 'html.parser')
+#for i in range (2,3) :
+   # page = requests.get("https://www.gumtree.com.au/s-construction/page-"+str(i)+"/advertisedby-private/c18346?ad=offering")
+   # soup = BeautifulSoup(page.content, 'html.parser')
 
     #There are 3 classes of links
-    for a in soup.find_all('a', href=True, class_='user-ad-row user-ad-row--no-image link link--base-color-inherit link--hover-color-none link--no-underline'):
-        list_url.append("https://www.gumtree.com.au"+a['href'])
-    for a in soup.find_all('a', href=True, class_='user-ad-row user-ad-row--featured-or-premium user-ad-row--no-image link link--base-color-inherit link--hover-color-none link--no-underline'):
-        list_url.append("https://www.gumtree.com.au"+a['href'])
+  #  for a in soup.find_all('a', href=True, class_='user-ad-row user-ad-row--no-image link link--base-color-inherit link--hover-color-none link--no-underline'):
+  #      list_url.append("https://www.gumtree.com.au"+a['href'])
+  #  for a in soup.find_all('a', href=True, class_='user-ad-row user-ad-row--featured-or-premium user-ad-row--no-image link link--base-color-inherit link--hover-color-none link--no-underline'):
+   #     list_url.append("https://www.gumtree.com.au"+a['href'])
         
         
 print(len(list_url))
@@ -42,7 +42,7 @@ for i in range (0, len(list_url)-1) :
     soup = BeautifulSoup(page.content, 'html.parser')
     print(i)
     dl_data = soup.find_all("dd")
-    list_date.append(dl_data[1].string)
+    list_date.append(dl_data[1].text)
     
     loc_data = soup.find(class_='ad-heading__ad-map-link google-map-link j-google-map-link')
     list_location.append(loc_data.text)

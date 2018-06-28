@@ -45,7 +45,7 @@ for i in range (0, len(list_url)-1) :
     dl_data = soup.find_all("dd")
     if len(dl_data) > 1 :
         list_date.append(dl_data[1].text)
-     else :
+    else :
          list_date.append("None")            
     loc_data = soup.find(class_='ad-heading__ad-map-link google-map-link j-google-map-link')
     list_location.append(loc_data.text.replace(",", ";"))

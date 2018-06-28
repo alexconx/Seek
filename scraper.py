@@ -25,7 +25,7 @@ for a in soup.find_all('a', href=True, class_='user-ad-row user-ad-row--premium 
     
 print(list_url)
 
-page = requests.get(list_url[i])
+page = requests.get(list_url[0])
 soup = BeautifulSoup(page.content, 'html.parser')
 list_date.append(soup.findAll('dd', class_='ad-details__ad-attribute-value'))
 print (list_date)

@@ -49,6 +49,6 @@ for i in range (0, len(list_url)-1) :
     
     scraperwiki.sqlite.save(unique_keys=['link'], data={"link": list_url[i], "date": list_date[i], "location": list_location[i]})
     
-print(list_url[0])
-print(list_date[0])
-print(list_location[0])
+print(type(list_url[0]))
+print(type(list_date[0]))
+print(type(list_location[0]))

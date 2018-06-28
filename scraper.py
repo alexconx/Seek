@@ -46,7 +46,7 @@ for i in range (0, len(list_url)-1) :
     list_date.append(dl_data[1].text)
     
     loc_data = soup.find(class_='ad-heading__ad-map-link google-map-link j-google-map-link')
-    list_location.append(loc_data.text.replace(",", ";"))
+    list_location.append(loc_data.text.replace(",", " "))
     
     scraperwiki.sqlite.save(unique_keys=['link'], data={"link": list_url[i], "date": list_date[i], "location": list_location[i]})
     

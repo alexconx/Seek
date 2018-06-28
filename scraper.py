@@ -24,7 +24,7 @@ for a in soup.find_all('a', href=True, class_='user-ad-row user-ad-row--premium 
     list_url.append("https://www.gumtree.com.au"+a['href'])
 
 #BOUCLE POUR CHERCHER TOUS LES LIENS DES 15 PREMIERES PAGES
-for i in range (2,4) :
+for i in range (2,3) :
     page = requests.get("https://www.gumtree.com.au/s-construction/page-"+str(i)+"/advertisedby-private/c18346?ad=offering")
     soup = BeautifulSoup(page.content, 'html.parser')
 

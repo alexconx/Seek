@@ -37,7 +37,8 @@ for a in soup.find_all('a', href=True, class_='user-ad-row user-ad-row--premium 
         
 print(len(list_url))
 
-for i in range (0, len(list_url)-1) :
+#for i in range (0, len(list_url)-1) :
+for i in range (0, 1) :
     page = requests.get(list_url[i])
     soup = BeautifulSoup(page.content, 'html.parser')
     print(i)

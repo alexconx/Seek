@@ -15,7 +15,7 @@ soup = BeautifulSoup(page.content, 'html.parser')
 
 for a in soup.find_all('a', href=True, class_='user-ad-row user-ad-row--no-image link link--base-color-inherit link--hover-color-none link--no-underline'):
     list_url.append("https://www.gumtree.com.au"+a['href'])
-    list_location.append(+a['aria-label'])
+    list_location.append(a['aria-label'])
 print(list_location)
     
 for a in soup.find_all('a', href=True, class_='user-ad-row user-ad-row--featured-or-premium user-ad-row--no-image link link--base-color-inherit link--hover-color-none link--no-underline'):

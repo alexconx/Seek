@@ -25,11 +25,11 @@ for a in soup.find_all('a', href=True, class_='user-ad-row user-ad-row--premium 
     
 print(list_url)
 
+
 page = requests.get(list_url[0])
 soup = BeautifulSoup(page.content, 'html.parser')
-dl_data = soup.find_all("dd")
-list_date.append(dl_data[1].string)
-print (list_date)
+loc_data = soup.find_all("span", class_='ad-heading__ad-map-link google-map-link j-google-map-link')
+print(span.attrs['data-address'])
 
 
 for span in soup.find_all('span', class_='user-ad-row__location-area'):
@@ -51,6 +51,13 @@ for i in range (2,10) :
     
 print (list_url[0])
 
-for i in range (0, len(list_url)-1) :
-    scraperwiki.sqlite.save(unique_keys=['id'], data={"id" : str(i), "link": list_url[i]})
+#for i in range (0, len(list_url)-1) :
+   # page = requests.get(list_url[i])
+   # soup = BeautifulSoup(page.content, 'html.parser')
+   # dl_data = soup.find_all("dd")
+    #list_date.append(dl_data[1].string)
+    
+    
+    
+   # scraperwiki.sqlite.save(unique_keys=['id'], data={"id" : str(i), "link": list_url[i], "date": list_date[i]})
     

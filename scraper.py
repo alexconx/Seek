@@ -29,7 +29,7 @@ print(list_url)
 page = requests.get(list_url[0])
 soup = BeautifulSoup(page.content, 'html.parser')
 loc_data = soup.find_all("span", class_='ad-heading__ad-map-link google-map-link j-google-map-link')
-print(loc_data.attrs['data-address'])
+print(loc_data)
 
 
 for span in soup.find_all('span', class_='user-ad-row__location-area'):

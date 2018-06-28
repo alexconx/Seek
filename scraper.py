@@ -22,9 +22,6 @@ for a in soup.find_all('a', href=True, class_='user-ad-row user-ad-row--featured
     
 for a in soup.find_all('a', href=True, class_='user-ad-row user-ad-row--premium user-ad-row--featured-or-premium user-ad-row--no-image link link--base-color-inherit link--hover-color-none link--no-underline'):
     list_url.append("https://www.gumtree.com.au"+a['href'])
-    
-print(list_url)
-
 
 #BOUCLE POUR CHERCHER TOUS LES LIENS DES 15 PREMIERES PAGES
 for i in range (2,10) :
@@ -36,8 +33,7 @@ for i in range (2,10) :
         list_url.append("https://www.gumtree.com.au"+a['href'])
     for a in soup.find_all('a', href=True, class_='user-ad-row user-ad-row--featured-or-premium user-ad-row--no-image link link--base-color-inherit link--hover-color-none link--no-underline'):
         list_url.append("https://www.gumtree.com.au"+a['href'])
-    
-print (list_url[0])
+        
 
 for i in range (0, len(list_url)-1) :
     page = requests.get(list_url[i])
@@ -51,6 +47,6 @@ for i in range (0, len(list_url)-1) :
     
     #scraperwiki.sqlite.save(unique_keys=['link'], data={"link": list_url[i], "date": list_date[i], "location": list_location[i]})
     
-print(list_url)
-print(list_date)
-print(list_location)
+print(list_url[0])
+print(list_date[0])
+print(list_location[0])

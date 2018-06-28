@@ -24,7 +24,11 @@ for a in soup.find_all('a', href=True, class_='user-ad-row user-ad-row--premium 
     list_url.append("https://www.gumtree.com.au"+a['href'])
     
 print(list_url)
-    
+
+page = requests.get(list_url[i])
+soup = BeautifulSoup(page.content, 'html.parser')
+list_date.append(soup.findAll('dd', class_='ad-details__ad-attribute-value'))
+print (list_date)
 
 
 for span in soup.find_all('span', class_='user-ad-row__location-area'):
@@ -47,9 +51,5 @@ for i in range (2,10) :
 print (list_url[0])
 
 for i in range (0, len(list_url)-1) :
-    page = requests.get(list_url[i])
-    soup = BeautifulSoup(page.content, 'html.parser')
-    list_date.append(soup.findAll('dd', class_='ad-details__ad-attribute-value'))
     scraperwiki.sqlite.save(unique_keys=['id'], data={"id" : str(i), "link": list_url[i]})
     
-print (list_date)

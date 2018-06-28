@@ -34,6 +34,8 @@ for i in range (2,10) :
     for a in soup.find_all('a', href=True, class_='user-ad-row user-ad-row--featured-or-premium user-ad-row--no-image link link--base-color-inherit link--hover-color-none link--no-underline'):
         list_url.append("https://www.gumtree.com.au"+a['href'])
         
+        
+print(len(list_url))
 
 for i in range (0, len(list_url)-1) :
     page = requests.get(list_url[i])

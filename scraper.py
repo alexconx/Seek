@@ -27,7 +27,9 @@ print(list_url)
 
 page = requests.get(list_url[0])
 soup = BeautifulSoup(page.content, 'html.parser')
-list_date.append(soup.findAll('dd', class_='ad-details__ad-attribute-value').getText())
+dl_data = soup.find_all("dl")
+for dlitem in dl_data: 
+    list_date.append(dlitem.find("dt",text="Last Edited:").parent.findNext("dd").contents[0])
 print (list_date)
 
 

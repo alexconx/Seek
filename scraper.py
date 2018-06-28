@@ -28,8 +28,7 @@ print(list_url)
 page = requests.get(list_url[0])
 soup = BeautifulSoup(page.content, 'html.parser')
 dl_data = soup.find_all("dd")
-for dlitem in dl_data: 
-    list_date.append(dlitem.string)
+list_date.append(dl_data[1].string)
 print (list_date)
 
 

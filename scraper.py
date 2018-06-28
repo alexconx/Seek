@@ -26,19 +26,6 @@ for a in soup.find_all('a', href=True, class_='user-ad-row user-ad-row--premium 
 print(list_url)
 
 
-page = requests.get(list_url[0])
-soup = BeautifulSoup(page.content, 'html.parser')
-loc_data = soup.find(class_='ad-heading__ad-map-link google-map-link j-google-map-link')
-print(loc_data.text)
-
-
-
-for span in soup.find_all('span', class_='user-ad-row__location-area'):
-    list_location.append(span.text)
-    
-print(list_location)
-
-
 #BOUCLE POUR CHERCHER TOUS LES LIENS DES 15 PREMIERES PAGES
 for i in range (2,10) :
     page = requests.get("https://www.gumtree.com.au/s-construction/page-"+str(i)+"/advertisedby-private/c18346?ad=offering")
@@ -52,13 +39,15 @@ for i in range (2,10) :
     
 print (list_url[0])
 
-#for i in range (0, len(list_url)-1) :
-   # page = requests.get(list_url[i])
-   # soup = BeautifulSoup(page.content, 'html.parser')
-   # dl_data = soup.find_all("dd")
-    #list_date.append(dl_data[1].string)
+for i in range (0, len(list_url)-1) :
+    page = requests.get(list_url[i])
+    soup = BeautifulSoup(page.content, 'html.parser')
     
+    dl_data = soup.find_all("dd")
+    list_date.append(dl_data[1].string)
     
+    loc_data = soup.find(class_='ad-heading__ad-map-link google-map-link j-google-map-link')
+    list_location.append(loc_data.text)
     
-   # scraperwiki.sqlite.save(unique_keys=['id'], data={"id" : str(i), "link": list_url[i], "date": list_date[i]})
+    scraperwiki.sqlite.save(unique_keys=['id'], data={"id" : str(i), "link": list_url[i], "date": list_date[i], "location": list_location[i]})
     

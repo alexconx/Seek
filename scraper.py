@@ -16,5 +16,3 @@ print(len(list_name))
 
 for i in range (0, len(list_name)-1) :
     scraperwiki.sqlite.save(unique_keys=['company_name'], data={"company_name": list_name[i]})
-    
-print(type(list_name[0])

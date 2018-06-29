@@ -11,7 +11,6 @@ for i in range (1,100) :
     soup = BeautifulSoup(page.content, 'html.parser')
 
     for a in soup.find_all('a', href=True, class_='_257MqcB'):
-        print(type(a.getText()))
         list_name.append(a.getText())        
         
 print(len(list_name))

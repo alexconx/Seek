@@ -7,7 +7,7 @@ list_name = []
 #Loop to get the n first pages
 n = 3
 for i in range (1,100) :
-    page = requests.get("https://www.seek.com.au/jobs-in-construction?daterange=7&page=100"+str(i))
+    page = requests.get("https://www.seek.com.au/jobs-in-construction?daterange=7&page="+str(i))
     soup = BeautifulSoup(page.content, 'html.parser')
 
     for a in soup.find_all('a', href=True, class_='_257MqcB'):

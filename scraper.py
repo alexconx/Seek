@@ -10,7 +10,8 @@ for i in range (1,n) :
     soup = BeautifulSoup(page.content, 'html.parser')
 
     for a in soup.find_all('a', href=True, class_='_257MqcB'):
-        print(type(a))
+        print(type(a.getText()))
+        print(type(a.text()))
         #list_name.append(a.text())        
         
 print(len(list_name))

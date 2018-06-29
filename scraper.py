@@ -11,8 +11,7 @@ for i in range (1,n) :
 
     for a in soup.find_all('a', href=True, class_='_257MqcB'):
         print(type(a.getText()))
-        print(type(a.text()))
-        #list_name.append(a.text())        
+        list_name.append(a.getText())        
         
 print(len(list_name))
 

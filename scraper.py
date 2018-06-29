@@ -6,7 +6,7 @@ list_name = []
     
 #Loop to get the n first pages
 n = 3
-for i in range (1,n) :
+for i in range (1,15) :
     page = requests.get("https://www.seek.com.au/jobs-in-construction?page="+str(i))
     soup = BeautifulSoup(page.content, 'html.parser')
 

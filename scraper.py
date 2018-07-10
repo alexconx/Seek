@@ -18,11 +18,14 @@ for i in range (1,100) :
         list_date.append(a.getText()) 
     
     for a in soup.find_all('a', href=True, class_='_1EkZJQ7'):
+        print(a.getText())
         list_link.append("https://www.seek.com.au/"+a['href'])
     
 
     for a in soup.find_all('a', href=True, class_='_257MqcB'):
         list_name.append(a.getText())
+        print(a.getText())
+
  
       
 print(len(list_link))        

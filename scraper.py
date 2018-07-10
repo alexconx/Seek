@@ -13,7 +13,7 @@ for i in range (1,100) :
     soup = BeautifulSoup(page.content, 'html.parser')
     
     
-    for a in soup.find_all('a', href=True, class_='Eadjc1o'):
+    for a in soup.find_all('a', class_='Eadjc1o'):
         print(a.getText())
         list_date.append(a.getText()) 
     
@@ -21,7 +21,7 @@ for i in range (1,100) :
         list_link.append("https://www.seek.com.au/"+a['href'])
     
 
-    for a in soup.find_all('a', href=True, class_='_257MqcB'):
+    for a in soup.find_all('a', class_='_257MqcB'):
         list_name.append(a.getText())
  
       

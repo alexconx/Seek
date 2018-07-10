@@ -15,7 +15,6 @@ for i in range (1,100) :
     
     for a in soup.find_all(class_='Eadjc1o'):
         print(a.getText())
-        print(a.text())
         list_date.append(a.getText()) 
     
     for a in soup.find_all('a', href=True, class_='_1EkZJQ7'):

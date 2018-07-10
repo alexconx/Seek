@@ -13,7 +13,7 @@ for i in range (1,100) :
     soup = BeautifulSoup(page.content, 'html.parser')
     
     
-    for a in soup.find_all(class_='Eadjc1o'):
+    for a in soup.find_all(class_='_3FrNV7v _8LyaGjS _9TnpFYS _3PZrylH _2heRYaN E6m4BZb'):
         print(a.getText())
         list_date.append(a.getText()) 
     

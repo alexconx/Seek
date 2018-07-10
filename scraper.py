@@ -17,7 +17,7 @@ for i in range (1,10) :
         print(a.getText())
         list_date.append(a.getText()) 
     
-    for a in soup.find_all('a', href=True, class_='_1EkZJQ7'):
+    for a in soup.find_all('a', href=True, class_='_257MqcB'):
         list_link.append("https://www.seek.com.au/"+a['href'])
     
 

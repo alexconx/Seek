@@ -12,16 +12,18 @@ for i in range (1,100) :
     page = requests.get("https://www.seek.com.au/jobs-in-construction?daterange=7&page="+str(i))
     soup = BeautifulSoup(page.content, 'html.parser')
     
+    
+    for a in soup.find_all('a', href=True, class_='_3FrNV7v _8LyaGjS _3PZrylH _2heRYaN E6m4BZb'):
+        print(a.getText())
+        list_date.append(a.getText()) 
+    
     for a in soup.find_all('a', href=True, class_='_1EkZJQ7'):
         list_link.append("https://www.seek.com.au/"+a['href'])
     
 
     for a in soup.find_all('a', href=True, class_='_257MqcB'):
         list_name.append(a.getText())
-
-    for a in soup.find_all('a', href=True, class_='_3FrNV7v _8LyaGjS _3PZrylH _2heRYaN E6m4BZb'):
-        print(a.getText())
-        list_date.append(a.getText())  
+ 
       
 print(len(list_link))        
 print(len(list_name))
